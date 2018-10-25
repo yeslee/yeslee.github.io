@@ -79,6 +79,7 @@
 .writing{
   padding: 50px 40px 60px 40px;
   /* position: relative; */
+  overflow: hidden;
 }
 
 .writing:after{
@@ -89,29 +90,39 @@
 
 .writing .description{
   /* position: absolute; */
-  min-width:170px;
-  max-width:16%;
+  /* min-width:170px;
+  max-width:16%; */
+  width: 16%;
   float: left;
   display: block;
   /* background-color: red; */
-  margin-right: 8%
 }
 
-.writing .article{
+.writing .right{
     float: left;
     /* background-color: yellow; */
-    width: 76%;
-
+    width: 84%;
+    overflow: auto;
 }
-
-.shadow_box{
+.article:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.article{
+  width: 2000px;
+}
+.article li{
   float: left;
   display: block;
   margin-right: 4%;
-  width: 20%;
+  width: 300px;
   height: 240px;
   /* background-color: blue; */
   box-shadow:0 0 1px 0 rgba(192,200,204,.2), 0 5px 10px 0 #d0d5da
+}
+.article li .shadow_box{
+
 }
 
 
@@ -120,4 +131,50 @@
 .footer{
   padding: 50px 40px 60px 40px;
   background-color: #3E3F40;
+}
+
+
+
+/* parallax */
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+
+/* masonry */
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html { overflow-y: scroll; }
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.grid {
+  background: #DDD;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+
+.grid-item {
+  float: left;
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
 }
