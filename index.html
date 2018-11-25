@@ -5,19 +5,51 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Homepage</title>
 
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans+SC:400,500,700|Source+Sans+Pro" rel="stylesheet">
+
         <link rel="stylesheet" href="/css/normalize.css">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/css/css.css">
 
         <script src="/js/jquery-3.3.1.min.js"></script>
-        <script src="/js/parallax.min.js"></script>
-        <script src="/js/masonry.pkgd.min.js"></script>
+        <script src="/js/script.js"></script>
+
+
+        <style>
+            body {
+              background-color: #E9E4D7;
+              font-family: 'lato', sans-serif;
+            }
+            ul{
+              list-style-type:none;
+            }
+        </style>
+            
+
+        
     </head>
     <body>
-      <div class="main">
-        <div class="menu"></div>
-        <h1 class="title">Hello <br> My name is yeseulee</h1>
-        <h1 class="title2">I love to make " "</h1>
-        <div class="description">yeslee's work includes a wide range of fields, reflecting his abilities in graphic design, web-based design, UI design, motion graphic design, typography and many other fields. Recently, He is interested in iOS, web developent to create the actual product.</div>
+      <div class="navContainor">
+        <div class="column">
+            <div class="title">YS</div>
+        </div>
+        <div class="column second">
+            <ul class ="menu">
+                <li>About</li>
+                <li>Work</li>
+                <!-- <li>Contact</li> -->
+            </ul>
+            <div class="introduce">
+                I am a product designer,
+                <br>based on Sydney, Australia.
+                <br><br>
+                Over the past six years, I have experienced diverse products from India, Korea.
+            </div>
+            <div class="more">
+                &#x2192
+            </div>
+          
+        </div>
+
       </div>
       <div class="work">
         <div class="title">Work</div>
@@ -74,5 +106,36 @@
       <div class="footer">
         <div class="footer_menu">menu</div>
       </div>
+
+      <!-- <script>
+      $('.title').textillate({
+        in: {
+        	// set the effect name
+          effect: 'fadeInUp',
+
+          // set the delay factor applied to each consecutive character
+          delayScale: 0.9,
+
+          // set the delay between each character
+          delay: 80,
+
+          // set to true to animate all the characters at the same time
+          sync: false,
+
+          // randomize the character sequence
+          // (note that shuffle doesn't make sense with sync = true)
+          shuffle: false,
+
+          // reverse the character sequence
+          // (note that reverse doesn't make sense with sync = true)
+          reverse: false,
+
+          // callback that executes once the animation has finished
+          callback: function () {}
+        },
+
+      });
+      </script> -->
     </body>
+
 </html>
