@@ -1,0 +1,122 @@
+* { margin: 0; padding: 0; }
+li { list-style: none; }
+a, a:link, a:hover, a:active { color: inherit; text-decoration: none; }
+body {color: #212121; font-size: 14px; background-color: #EDE5D3; font-family:'Helvetica Neue', 'AppleSDGothicNeo-Light', '맑은 고딕', 'Malgun Gothic', '돋움', dotum, Helvetica, Arial, sans-serif; }
+h1 {font-size: 24px;}
+
+/* section1 - main */
+#home{
+  position: relative;
+  padding : 40px;
+  z-index: 111;
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  grid-gap : 20px;
+  }
+  
+.column .title {
+  font-size: 110px;
+  line-height: 0.8; 
+  margin-bottom: 320px;
+  letter-spacing: -8px;
+}
+  
+.column .subInfo {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 60px;
+}
+ 
+.column.second{
+  margin-right: 20px;
+}
+
+.column.second .menu{
+    font-size: 40px;
+    margin: 0px 10px 180px 0px;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+
+.introduce{
+  font-family: 'Noto Sans SC';
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 100px 20px 0;
+  letter-spacing: -0.5px;
+}
+
+
+
+/*section2*/
+.addInrto {
+  background-color: rgb(231, 197, 128);
+}
+
+
+/*section2*/
+#work{
+  padding: 80px 40px 60px 40px;
+  background-color: #F9F8F6;
+  height: 860px;
+  position: relative;
+  z-index: -1;
+}
+.sectionTitle{
+  /* font-family: 'Noto Sans SC'; */
+  font-weight: 500;
+  font-size: 18px;
+  color : rgb(101, 102, 102);
+  margin-bottom: 32px;
+  }
+
+#work ul{
+    position: absolute;
+    width: 70%;
+    z-index: 2;
+  }
+
+#work ul li{
+    font-size: 60px;
+    font-weight: 700;
+    display: inline-flex;
+    margin-right: 24px;
+    line-height: 1.3;
+  }
+
+#work .Img{
+    position: absolute;
+    width: 50%;
+    right: 80px;
+    top:280px;
+    z-index: 1;
+  }
+
+
+/*section2*/
+#more{
+  padding: 80px 40px 60px 40px;
+  /* background-color: #1f1f1f; */
+}
+
+#more .sectionTitle{
+  /* color : white; */
+  margin-bottom: 60px;
+}
+
+#more ul li{
+  /* color : white; */
+  font-size: 48px;
+  line-height: 2.2;
+  font-weight: 700;
+  display: flex;
+}
+
+#more ul li .number{
+  font-size: 14px;
+  margin: 32px 240px 0 60px;
+}
+
+
