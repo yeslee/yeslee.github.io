@@ -6,24 +6,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Yeslee : Portfolio</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans+SC:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans+SC:400,500,700|" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 
-    <style>
-        @font-face {
-            font-family: 'open-arrow';
-            src: url('fonts/OpenArrow-Regular.eot') format('embedded-opentype'),
-                url('fonts/OpenArrow-Regular.woff2') format('woff2'),
-                url('fonts/OpenArrow-Regular.woff') format('woff'),
-                url('fonts/OpenArrow-Regular.otf') format('opentype'),
-                url('fonts/OpenArrow-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            unicode-range: U+2190-21ff;
-        }
-    </style>
 </head>
 
 <body>
@@ -42,15 +29,26 @@
                 <div class="grid_right">
                     <ul style="margin-top:6px;">
                         <li>
-                            <div style="display:flex">
-                                <a href="/about/index.html" class="text-y line dribbble">About</a>
-                                <div class="arrow" style="color:#AA049B"> &#x2192</div>
+                            <div style="display:flex" class="text-y line">
+                                <a href="/about/index.html">About</a>
+                                <div class="arrow">
+                                    <svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="arrow" fill="#212121">
+                                                <polygon id="Path" points="13.025 0 10.178 2.828 16.354 9.004 0 9.004 0 12.996 16.354 12.996 10.178 19.172 13.025 22 24 11"></polygon>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
                             </div>
                         </li>
                         <li>
-                            <div style="display:flex">
-                                <a href="#work" class="text-y line down behance">Work</a>
-                                <div class="arrow down" style="color:#010DB5"> &#x2193</div>
+                            <div style="display:flex" class="text-y line down">
+                                <a href="#work" class="workMenu">Work</a>
+                                <div class="arrow down">
+                                    <img src="img/arrow_down.svg" alt="" style="width:24px; height:24px">
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -64,6 +62,9 @@
                     </h4>
                 </div>
             </div>
+            <div class="down-arrow">
+                <img src="img/arrow_s_down.svg" alt="" style="width:32px; height:32px">
+            </div>
         </section>
         <!-- work -->
         <section id="work">
@@ -71,47 +72,105 @@
             <h2>
                 <ul>
                     <li>
-                        <a class="one" href="/portfolio/project00.html">True&nbspBalance</a>
+                        <div class="text-y"><a class="one" href="/portfolio/project00.html" data-cursor-text="hello">True&nbspBalance,</a></div>
+                        <!-- <div class="sub list01">India</div> -->
                     </li>
-                    <!-- <li><a class="text one" href="/portfolio/project00.html">True&nbspBalance,</a>
-                    </li> -->
-                    <li><a class="two" href="/portfolio/project01.html">Wanted,</a> </li>
-                    <li><a class="three" href="/portfolio/project02.html"> Galaxy&nbspGear&nbsp1-2, </a></li>
-                    <li><a class="four" href="/portfolio/project03.html">Family&nbspHub, </a></li>
-                    <li><a class="five" href="/portfolio/project04.html"> Smart&nbspTV, </a></li>
-                    <li><a class="six" href="/portfolio/project05.html"> S-Health</a></li>
+                    <li>
+                        <div class="text-y"><a class="two" href="/portfolio/project01.html">Wanted,</a> </div>
+                        <!-- <div class="sub list02">Web, ios</div> -->
+                    </li>
+                    <li>
+                        <div class="text-y"><a class="three" href="/portfolio/project02.html"> Galaxy&nbspGear&nbsp1-2,
+                            </a></div>
+                    </li>
+                    <li>
+                        <div class="text-y"><a class="four" href="/portfolio/project03.html">Family&nbspHub, </a></div>
+                    </li>
+                    <li>
+                        <div class="text-y"><a class="five" href="/portfolio/project04.html"> Smart&nbspTV, </a></div>
+                    </li>
+                    <li>
+                        <div class="text-y"><a class="six" href="/portfolio/project05.html"> S-Health</a></div>
+                    </li>
                 </ul>
             </h2>
-            <!-- <img id="photo" src="https://cdn.dribbble.com/users/1736497/screenshots/5602227/dribbble1.png" alt="Smiley face"> -->
+            <div id="work_img">
+                <img class="photo project01 img01" src="https://cdn.dribbble.com/users/1736497/screenshots/5602227/dribbble1.png"
+                    alt="Smiley face">
+                <img class="photo project01 img02" src="https://cdn.dribbble.com/users/692322/screenshots/5790874/drbl_analytics_2x.png"
+                    alt="Smiley face">
+                <img class="photo project01 img03" src="https://cdn.dribbble.com/users/997070/screenshots/5790901/benefits_2x.png"
+                    alt="Smiley face">
+                <img class="photo project02 img01" src="https://cdn.dribbble.com/users/50386/screenshots/5787523/preview_2x.jpg"
+                    alt="Smiley face">
+                <img class="photo project02 img02" src="https://cdn.dribbble.com/users/501822/screenshots/5788653/dribbble_1__1_.gif"
+                    alt="Smiley face">
+                <img class="photo project02 img03" src="https://cdn.dribbble.com/users/25514/screenshots/5569805/illustration_set_concept_for_amazon_ramotion_2x.png"
+                    alt="Smiley face">
+                <img class="photo project03 img01" src="https://cdn.dribbble.com/users/1069526/screenshots/5781252/desktop_2x.jpg"
+                    alt="Smiley face">
+                <img class="photo project03 img02" src="https://cdn.dribbble.com/users/40433/screenshots/5783155/dribbble_2x.png"
+                    alt="Smiley face">
+                <img class="photo project03 img03" src="https://cdn.dribbble.com/users/452635/screenshots/5783182/105.3.pre.png"
+                    alt="Smiley face">
+                <img class="photo project04 img01" src="https://cdn.dribbble.com/users/1107687/screenshots/5782426/light_themed_ui_2x.jpg"
+                    alt="Smiley face">
+                <img class="photo project04 img02" src="https://cdn.dribbble.com/users/4859/screenshots/5781139/02_2x.png"
+                    alt="Smiley face">
+                <img class="photo project04 img03" src="https://cdn.dribbble.com/users/1484654/screenshots/5774309/data_dribbble_2x.jpg"
+                    alt="Smiley face">
+                <img class="photo project05 img01" src="https://cdn.dribbble.com/users/1223307/screenshots/5777715/dribbble-one-02-01-19_2x.png"
+                    alt="Smiley face">
+                <img class="photo project05 img02" src="https://cdn.dribbble.com/users/40433/screenshots/5777194/untitled-3_2x.png"
+                    alt="Smiley face">
+                <img class="photo project05 img03" src="https://cdn.dribbble.com/users/329103/screenshots/5775371/rijks.gif"
+                    alt="Smiley face">
+                <img class="photo project06 img01" src="https://cdn.dribbble.com/users/102849/screenshots/5786391/two_mobile_screens_2x.png"
+                    alt="Smiley face">
+                <img class="photo project06 img02" src="https://cdn.dribbble.com/users/1005650/screenshots/5772819/luxury-instagram-stories-by-goashape-2_2x.jpg"
+                    alt="Smiley face">
+                <img class="photo project06 img03" src="https://cdn.dribbble.com/users/86299/screenshots/5764349/leaderboard_2x.png"
+                    alt="Smiley face">
+            </div>
         </section>
         <!-- more -->
         <section id="more">
-            <div class="sectionTitle p-text2">More about me</div>
+            <div class="sectionTitle p-text2" style="margin-bottom: 60px">More about me</div>
             <ul>
                 <li>
                     <div class="number p-text4">01 </div>
                     <a href="https://www.behance.net/yeslee" class="text-y line up behance" target="_blank">Behance</a>
-                    <div class="arrow big up" style="color:#010DB5"> &#x2197</div>
+                    <div class="arrow up">
+                        <img src="img/arrow_up.svg" alt="" style="width:30px; height:30px">
+                    </div>
                 </li>
                 <li>
                     <div class="number p-text4">02</div>
                     <a href="https://dribbble.com/yeslee" class="text-y line up dribbble" target="_blank">Dribbble</a>
-                    <div class="arrow big up" style="color:#AA049B"> &#x2197</div>
+                    <div class="arrow up">
+                        <img src="img/arrow_up.svg" alt="" style="width:30px; height:30px">
+                    </div>
                 </li>
                 <li>
                     <div class="number p-text4">03</div>
                     <a href="https://medium.com/@yeslee" class="text-y line up medium" target="_blank">Medium</a>
-                    <div class="arrow big up" style="color:#1A9963"> &#x2197</div>
+                    <div class="arrow up">
+                        <img src="img/arrow_up.svg" alt="" style="width:30px; height:30px">
+                    </div>
                 </li>
                 <li>
                     <div class="number p-text4">04</div>
                     <a href="https://www.linkedin.com/in/yeslee" class="text-y line up linkdein" target="_blank">Linkedin</a>
-                    <div class="arrow big up" style="color:#003D7C"> &#x2197</div>
+                    <div class="arrow up">
+                        <img src="img/arrow_up.svg" alt="" style="width:30px; height:30px">
+                    </div>
                 </li>
                 <li>
                     <div class="number p-text4">05</div>
                     <a href="https://www.linkedin.com/in/yeslee" class="text-y line down resume" target="_blank">Resume</a>
-                    <div class="arrow big down" style="color:#C44904"> &nbsp;&#x2193</div>
+                    <div class="arrow down">
+                        <img src="img/arrow_down.svg" alt="" style="width:32px; height:32px">
+                    </div>
                 </li>
             </ul>
         </section>
@@ -125,6 +184,9 @@
                 <div>
         </section>
     </main>
+
+
+
 
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/script.js"></script>
