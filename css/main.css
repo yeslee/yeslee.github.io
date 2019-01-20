@@ -74,8 +74,8 @@ h6 {
 .p-text4{
   font-size: 0.86rem;
   font-weight: 700;
-  line-height: 1.8; 
-  opacity: 0.54;
+  line-height: 1.56; 
+  color:rgb(0,0,0,0.54)
 }
 
 h1 span,
@@ -89,9 +89,13 @@ h6 span {
   transition: all 1s  cubic-bezier(0.3, 0.9, 0.2, 1.1);
 }
 
+
 /* ---------------Main --------------*/
 main {
   position: relative;
+}
+.mobile{
+  display: none;
 }
 /* section1 */
 #home {
@@ -211,7 +215,6 @@ main {
 #work ul li .sub{
   display: none;
 }
-
 #work_img{
   display: none;
 }
@@ -245,6 +248,23 @@ main {
 .photo.project06.img01{right: 30%;top: 80%;}
 .photo.project06.img02{left: 10%;top: 40%;}
 .photo.project06.img03{right: 0%;top: 60%;}
+
+.img-cover-hidden{
+  position: relative;
+  overflow: hidden;
+}
+.img-cover{
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 300px;
+  background-color: #f9f8f6;
+  transform: translateY(0%)
+}
+.mobileText {
+  transform: translateY(120%);
+  transition: all 1s  cubic-bezier(0.3, 0.9, 0.2, 1.1);
+}
 
 
 
@@ -383,7 +403,7 @@ main {
 }
 @media (max-width: 600px) {
   #home{height: 86vh;}
-  .grid_right{height: 90vh;}
+  .grid_right{height: 86vh;}
   .introduce{font-size: 1.6rem;bottom:126px !important;;  }
   .down-arrow{margin-top:-124px !important; }
   .down-arrow img{width:28px !important; height: 28px !important;}
@@ -435,19 +455,31 @@ main {
   #about-detail{margin-left:-6px;margin-top:100px;}
   .aboutHome.small{top:-60px}
 }
-@media (max-width: 411px){
-  section{padding:40px 18px 40px 18px !important}
-  #home{height: 94vh; padding:0 18px 40px 18px !important}
-  .grid_right{height: 94vh}
-  .yeslee{font-size:4rem !important; font-family: 700;}
-  .year{margin-left: 4px}
-  .introduce{display: none;}
+@media (max-width: 414px){
   .mobile{display: block !important;}
-  .introduce.mobile{font-size: 1.36rem}
-  h2{font-size: 2.8rem; line-height: 1.4}
-  #more ul li {font-size: 2.8rem;}
-  #more ul li .number{margin:4px 32px -10px 4px !important}
+  .desktop{display: none !important;}
+  section{padding:40px 18px 40px 18px !important}
+  #home{height: 700px; padding:0 18px 40px 18px !important}
+  .grid_right{height: 700px}
+  .yeslee{font-size:2.2rem !important; font-weight: 700 !important;}
+  .grid_left h6{position: absolute;top:-14px;width:100%;height: 100px;font-size:0.86rem}
+  .year{margin-left: 2px}
+  .introduce{display: none;}
+  .introduce.mobile{font-size: 1.26rem; font-family: 100;line-height: 1.56;color:black;opacity: 0.8;}
+  #work{height: 2730px !important;}
+  #work ul li{margin-right: 0px; margin-bottom: 40px;}
+  #work ul li a{display:inline; cursor: pointer;}
+  #work ul li img{margin-bottom: 12px;}
+  #work ul li .img-cover-hidden{margin-top: 20px}
+  #work ul li a span{overflow: hidden;}
+  #work ul li a span .p-text4{color:rgb(0,0,0,0.8);margin: 30px 0 2px 40px}
+  #work ul li a span .p-text2{font-size: 1.26rem;line-height: 1.3;letter-spacing: -0.54px;}
+  #more .sectionTitle.p-text2{margin-bottom: 40px !important}
+  #more ul{margin-bottom: 0px !important}
+  #more ul li {font-size: 2.8rem; line-height: 1.6 !important}
+  #more ul li .number{margin:14px 32px -10px 4px !important}
   #add{padding : 26px 18px !important}
+  .arrow{display:none !important}
 
   .aboutHome.small{margin-top: -10px !important}
   #about-title ul{display: none;}
@@ -455,7 +487,9 @@ main {
   #about-detail{margin-bottom: 40px !important}
   #about-detail h5{width: 100% !important}
 } 
-
+@media (max-width: 380px){
+  #work{height: 2570px !important;}
+}
 /* @media (pointer:coarse) {
 } */
 
@@ -520,7 +554,7 @@ main {
 }
 .ul-bg{
   display: none;
-  background: linear-gradient(rgba(255, 255, 255, 0) 10%, rgb(255, 255, 255, 1) 90%);
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0) 10%, rgb(255, 255, 255, 1) 90%);
   position: fixed;
   bottom:0;
   width: 100%;
@@ -531,7 +565,7 @@ main {
   left: 50%;
   position: fixed;
   z-index: 200;
-  background: linear-gradient(rgba(255, 255, 255, 1) 80%, rgb(255, 255, 255, 0));
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 1) 80%, rgb(255, 255, 255, 0));
   width: 100%;
 }
 #header-inner #h-nav-primary ul {
@@ -784,6 +818,14 @@ main {
   cursor: pointer; 
 }
 
+@media (hover: none) {
+  .experience-title.hover:hover, .experience-project:hover, #more ul li a:hover, #h-nav-primary ul li a:hover, #about-title ul li a:hover,.line:hover,.line:hover .arrow, .line.down:hover .arrow,.line.down:hover + .arrow,.line.up:hover + .arrow {
+    color: rgb(0,0,0,0.8)
+  }
+}
+
+
+
 /* --------------------Animation-------------------- */
 /* Main */
 @keyframes arrowDown{
@@ -876,4 +918,3 @@ main {
   transition: all 0.5s cubic-bezier(0.2, 0.6, 0.5, 0.91); 
   transition-delay: 0.1s; 
  } 
-

@@ -77,14 +77,36 @@ function scrollHandler() {
   if ($(window).scrollTop() >= $('#home').position().top) {
     setTimeout(function () { overflowText('#home .text-y', 120); }, 400);
     setTimeout(function () { overflowText('.yeslee.home .letter', 100); }, 400);
-    $('.down-arrow').css('display', 'block');
   }
   if ($(window).scrollTop() >= $('#work').position().top - 600) {
     setTimeout(function () { overflowText('#work .text-y', 120); }, 100);
-    $('.down-arrow').css('display', 'none');
   }
   if ($(window).scrollTop() >= $('#more').position().top - 600) {
     setTimeout(function () { overflowText('#more .text-y', 120); }, 100);
+  }
+  if ($(window).scrollTop() >= $('.m_one').position().top + 300) {
+    $('.img-cover.one').css('transform', 'translateY(-100%)').css('transition', '0.8s 0.6s');
+    setTimeout(function () { overflowText('.mobileText.one', 120); });
+  }
+  if ($(window).scrollTop() >= $('.m_two').position().top + 300) {
+    $('.img-cover.two').css('transform', 'translateY(-100%)').css('transition', '0.8s 0.6s');
+    setTimeout(function () { overflowText('.mobileText.two', 120); });
+  }
+  if ($(window).scrollTop() >= $('.m_three').position().top + 300) {
+    $('.img-cover.three').css('transform', 'translateY(-100%)').css('transition', '0.8s 0.6s');
+    setTimeout(function () { overflowText('.mobileText.three', 120); });
+  }
+  if ($(window).scrollTop() >= $('.m_four').position().top + 300) {
+    $('.img-cover.four').css('transform', 'translateY(-100%)').css('transition', '0.8s 0.6s');
+    setTimeout(function () { overflowText('.mobileText.four', 120); });
+  }
+  if ($(window).scrollTop() >= $('.m_five').position().top + 300) {
+    $('.img-cover.five').css('transform', 'translateY(-100%)').css('transition', '0.8s 0.6s');
+    setTimeout(function () { overflowText('.mobileText.five', 120); });
+  }
+  if ($(window).scrollTop() >= $('.m_six').position().top + 300) {
+    $('.img-cover.six').css('transform', 'translateY(-100%)').css('transition', '0.8s 0.6s');
+    setTimeout(function () { overflowText('.mobileText.six', 120); });
   }
 }
 
