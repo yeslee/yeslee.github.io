@@ -8,13 +8,52 @@
     <title>Yeslee : About </title>
 
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans+SC:400,500,700" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700|" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 
-<body>
+<body class="mainPage" style="background-color: white">
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+        </div>
+        <div id="menu">
+            <div class="menu-box">
+                <div class="menu-back"><img src="/img/back.svg" alt="back"></div>
+                <div class="menu-list overview">
+                    <ul>
+                        <li><a href="/" class="menuClose">Home</a></li>
+                        <li><a href="/about/index.html" class="menuClose">About</a></li>
+                        <li><a class="menuWork">Work</a></li>
+                    </ul>
+                </div>
+                <div class="menu-list work-menu">
+                    <ul>
+                        <li><a class="menuClose" href="/portfolio/project00.html">True&nbspBalance<span class="p-text5">16-18</span></a></li>
+                        <li><a class="menuClose" href="/portfolio/project00.html">Wanted<span class="p-text5">15-16</span></a></li>
+                        <li><a class="menuClose" href="/portfolio/project00.html">Galaxy Gear 1-2<span class="p-text5">14-15</span></a></li>
+                        <li><a class="menuClose" href="/portfolio/project00.html">Family Hub<span class="p-text5">15</span></a></li>
+                        <li><a class="menuClose" href="/portfolio/project00.html">Smart TV<span class="p-text5">12-14</span></a></li>
+                        <li><a class="menuClose" href="/portfolio/project00.html">S-Health<span class="p-text5">12-14</span></a></li>
+                    </ul>
+                </div>
+                <div class="menu-social-list">
+                    <ul>
+                        <li><a href="https://www.behance.net/yeslee" target="_blank" class="menuClose">Behance</a></li>
+                        <li><a href="https://dribbble.com/yeslee" target="_blank" class="menuClose">Dribbble</a></li>
+                        <li><a href="https://medium.com/@yeslee" target="_blank" class="menuClose">Medium</a></li>
+                        <li><a href="https://www.linkedin.com/in/yeslee" target="_blank" class="menuClose">Linkedin</a></li>
+                        <li><a href="" class="menuClose">Resume</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="blackBG"></div>
+    </nav>
     <div id="header-inner">
         <div id="h-nav-primary">
             <ul>
@@ -23,14 +62,12 @@
             </ul>
         </div>
     </div>
-    <section id="home">
+    <section id="home" style="background-color: white">
         <div id="about-title">
             <div class="about-title-bg">
                 <h1><a href="/" class="yeslee aboutHome wide">YES–LEE</a></h1>
-                <div class="aboutHome small">About</div>
             </div>
-
-            <ul>
+            <ul class="about-big-link">
                 <li><a href="https://www.behance.net/yeslee" target="_blank" class="listOne">Behance</a></li>
                 <li><a href="https://dribbble.com/yeslee" target="_blank" class="listTwo">Dribbble</a></li>
                 <li><a href="https://medium.com/@yeslee" target="_blank" class="listThree">Medium</a></li>
@@ -39,9 +76,9 @@
                 <li><a href="mailto:yesl1121@gmail.com" class="listSix">yesl1121@gmail.com</a></li>
             </ul>
             <div class="ul-bg"></div>
-
         </div>
         <div id="about-detail">
+            <div class="aboutHome small">About</div>
             <h5>
                 <div>Hello, I’m Yeseul Lee, but you can just call me <bold>'YESLEE'</bold>. It will be easier to
                     remember my name.</div>
@@ -50,7 +87,7 @@
                     the world.</div>
                 <div>I am always trying to learn hard because of the desire to work with a great team.</div>
             </h5>
-            <img class="Img" style="margin-top:60px;" src="https://i-h1.pinimg.com/564x/13/3d/11/133d114346348e7fbff344e5ee1a70f7.jpg"
+            <img class="Img" style="margin-top:40px;" src="https://i-h1.pinimg.com/564x/13/3d/11/133d114346348e7fbff344e5ee1a70f7.jpg"
                 alt="Smiley face">
             <div id="index-content-list">
                 <div class="list-tilte p-text3">Experience</div>
@@ -123,6 +160,7 @@
                             <div class="p-text2">HTML</div>
                             <div class="p-text2">CSS</div>
                             <div class="p-text2">Javascrpit</div>
+                            <div class="p-text2">Jquery</div>
                         </div>
                     </li>
                 </ul>
@@ -135,7 +173,16 @@
                 <div>Thank you for taking the time to get to know a little bit about me and my projects. Always happy
                     to chat over coffee. Say hello at yesl1121@gmail.com!</div>
             </h5>
+            <ul class="about-small-link">
+                <li><a href="https://www.behance.net/yeslee" target="_blank" class="menuClose">Behance</a></li>
+                <li><a href="https://dribbble.com/yeslee" target="_blank" class="menuClose">Dribbble</a></li>
+                <li><a href="https://medium.com/@yeslee" target="_blank" class="menuClose">Medium</a></li>
+                <li><a href="https://www.linkedin.com/in/yeslee" target="_blank" class="menuClose">Linkedin</a></li>
+                <li><a href="" class="menuClose">Resume</a></li>
+            </ul>
+
         </div>
+
     </section>
 
     <script src="/js/jquery-3.3.1.min.js"></script>
