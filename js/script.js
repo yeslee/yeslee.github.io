@@ -16,10 +16,9 @@ $(document).ready(function () {
     ProjectAnimation('.back');
     ProjectAnimation('.sub');
 
-    setTimeout(function () { $('#p-image').addClass('active'); }, 1600);
-    setTimeout(function () { overflowText('.text-y', 200); }, 1200);
+    setTimeout(function () { $('#p-image-main').addClass('active'); }, 1400);
+    setTimeout(function () { overflowText('.text-y', 200); }, 1000);
 
-    doScroll();
     //가로스크롤 - 마우스 누르고  
     $('.scroll-item').mousedown(function (event) {
       $(this)
@@ -144,7 +143,7 @@ function scrollHandler() {
     if ($(window).scrollTop() >= $('#work').position().top - 600) {
       setTimeout(function () { overflowText('#work .text-y', 120); }, 100);
     }
-    if ($(window).scrollTop() >= $('#more').position().top - 600) {
+    if ($(window).scrollTop() >= $('#more').position().top - 500) {
       setTimeout(function () { overflowText('#more .text-y', 120); }, 100);
     }
     if ($(window).scrollTop() >= $('.m_one').position().top + 300) {
@@ -170,6 +169,16 @@ function scrollHandler() {
     if ($(window).scrollTop() >= $('.m_six').position().top + 300) {
       $('.img-cover.six').css('transform', 'translateY(-100%)');
       setTimeout(function () { overflowText('.mobileText.six', 120); });
+    }
+  }
+  if ($('body').is('.project')) {
+    if ($(window).scrollTop() >= $('.sTV_slide').position().top - 400) {
+      $('.slideImage.one').css('transform', 'translateX(-40%)');
+      $('.slideImage.two').css('transform', 'translateX(-20%)').css('transition-delay', '0.2s');
+      $('.slideImage.three').css('transform', 'translateX(0%)').css('transition-delay', '0.4s');
+    }
+    if ($(window).scrollTop() >= $('.grid-container').position().top - 400) {
+      $('.scroll-item .items').css('left', '60px');
     }
   }
 }
@@ -267,35 +276,6 @@ function textAnimationDown(e, n) {
 
 
 //-------------------About-animate-------------------//
-$('.grid_right .one').click(function (e) {
-  e.preventDefault();
-  var linkUrl = $(this).attr('href');
-  setTimeout(function (url) { window.location = url; }, 0, linkUrl);
-  // $('.transition-wipe').css('animation', 'swipe 2.2s cubic-bezier(0.4, 0.4, 0.6, 0.7) 0.2s');
-  // $('.bgTitle.main').css('animation', 'bgTitleAnimation 0.7s cubic-bezier(0.2, 0.6, 0.6, 1) 0.4s forwards');
-});
-
-// Menu
-// aboutHoverMenu('#h-nav-primary ul li a');
-// aboutLeaveMenu('#h-nav-primary ul li a');
-
-// aboutHoverMenu('#about-title ul li a');
-// aboutLeaveMenu('#about-title ul li a');
-
-// function aboutHoverMenu(e) {
-//   $(e).mouseover(function () {
-//     var targetClass = event.currentTarget.className;
-//     // $(e).css('opacity', '1')
-//     // $('.' + targetClass).css('color', '#ca7228');
-//     $('.' + targetClass).css('opacity', '0.6');
-//   });
-// }
-// function aboutLeaveMenu(e) {
-//   $(e).mouseleave(function () {
-//     $(e).css('color', '#212121')
-//     $(e).css('opacity', '1')
-//   });
-// }
 
 //Work
 $('.goWork').on('click', function () {
@@ -308,66 +288,9 @@ $('.goWork').on('click', function () {
 //-------------------project-animate-------------------//
 function ProjectAnimation(e) {
   $(e).addClass('animate')
-  $(e).css('opacity', '1').css('transform', 'translateY(0%)');;
+  $(e).css('opacity', '0.9').css('transform', 'translateY(0%)');;
 }
 
-//scroll 애니메이션
-function doScroll() {
-  var isScrolling = false;
-
-  window.addEventListener("scroll", throttleScroll, false);
-
-  function throttleScroll(e) {
-    if (isScrolling == false) {
-      window.requestAnimationFrame(function () {
-        scrolling(e);
-        isScrolling = false;
-      });
-    }
-    isScrolling = true;
-  }
-
-  document.addEventListener("DOMContentLoaded", scrolling, false);
-
-  var listItems = document.querySelectorAll("#textUP");
-  var AnimationItem = document.querySelectorAll("#p-image");
-
-  function scrolling(e) {
-    for (var i = 0; i < listItems.length; i++) {
-      var listItem = listItems[i];
-
-      if (isPartiallyVisible(listItem)) {
-        listItem.classList.add("active");
-      }
-    }
-    for (var i = 0; i < AnimationItem.length; i++) {
-      var left = AnimationItem[i];
-
-      if (isPartiallyVisible(left)) {
-        left.classList.add("active");
-      }
-    }
-  }
-
-  function isPartiallyVisible(el) {
-    var elementBoundary = el.getBoundingClientRect();
-
-    var top = elementBoundary.top;
-    var bottom = elementBoundary.bottom;
-    var height = elementBoundary.height;
-
-    return ((top + height >= 0) && (height + window.innerHeight >= bottom));
-  }
-
-  function isFullyVisible(el) {
-    var elementBoundary = el.getBoundingClientRect();
-
-    var top = elementBoundary.top;
-    var bottom = elementBoundary.bottom;
-
-    return ((top >= 0) && (bottom <= window.innerHeight));
-  }
-};
 
 
 
