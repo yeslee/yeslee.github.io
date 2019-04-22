@@ -1,17 +1,23 @@
-window.onload = function () {
-  setTimeout(function () { overflowText('#home .text-y', 120); }, 0);
-  setTimeout(function () { overflowText('.yeslee.home .letter', 100); }, 0);
-  $('#home .down-arrow img').css('animation', 'arrowDown 2s ease 3s infinite normal none running')
-  $('#menuToggle').css('opacity', '1')
-}
+// window.onload = function () {
+//   setTimeout(function () { overflowText('#home .text-y', 120); }, 0);
+//   setTimeout(function () { overflowText('.yeslee.home .letter', 100); }, 0);
+//   $('#home .down-arrow img').css('animation', 'arrowDown 2s ease 3s infinite normal none running')
+//   $('#menuToggle').css('opacity', '1')
+// }
 
 $(document).ready(function () {
+  setTimeout(function () { overflowText('#home .text-y', 120); }, 0);
+  setTimeout(function () { overflowText('.yeslee.home .letter', 100); }, 0);
+  setTimeout(function () { overflowText('.big-title .text-y .letter', 50); }, 1000);
+  $('#home .down-arrow img').css('animation', 'arrowDown 2s ease 3s infinite normal none running')
+  $('#menuToggle').css('opacity', '1')
+
   //project
   if ($('body').is('.project')) {
-    $('.back').click(function () {
-      parent.history.back();
-      return false;
-    });
+    // $('.back').click(function () {
+    //   parent.history.back();
+    //   return false;
+    // });
 
     ProjectAnimation('.back');
     ProjectAnimation('.sub');
@@ -111,17 +117,15 @@ function menuClose() {
   setTimeout(function () { $('.menu-back').css('display', 'none') }, 400);
   setTimeout(function () { $('.menu-list li').css('transform', 'translateX(-200%)').css('opacity', '0').css('color', 'var(--effect-color)') }, 400);
 };
+
 //menu Animation
 function menuListFlow(e, s) {
   $.each($(e), function (i, el) {
     setTimeout(function () {
-      $(el).css({ 'transform': 'translateX(0%)', 'opacity': '1', 'color': '#333' }, 0);
+      $(el).css({ 'transform': 'translateX(0%)', 'opacity': '1', 'color': 'var(--dark-gray)' }, 0);
     }, (i * s));
   });
 }
-
-
-
 
 //색션 스크롤
 $('.workMenu').on('click', function () {
@@ -172,12 +176,13 @@ function scrollHandler() {
     }
   }
   if ($('body').is('.project')) {
-    if ($(window).scrollTop() >= $('.sTV_slide').position().top - 400) {
-      $('.slideImage.one').css('transform', 'translateX(-40%)');
+    if ($(window).scrollTop() >= $('.sTV_slide').position().top - 1000) {
+      $('.slideImage.one').css('transform', 'translateX(-40%)').css('transition-delay', '0s');
       $('.slideImage.two').css('transform', 'translateX(-20%)').css('transition-delay', '0.2s');
       $('.slideImage.three').css('transform', 'translateX(0%)').css('transition-delay', '0.4s');
+
     }
-    if ($(window).scrollTop() >= $('.grid-container').position().top - 400) {
+    if ($(window).scrollTop() >= $('.sTV_slide').position().top) {
       $('.scroll-item .items').css('left', '60px');
     }
   }
@@ -196,7 +201,7 @@ function selectMenu(event) {
   // console.log(targetClass);
 
   $('#work_img').css('display', 'block');
-  $('#work').css('transition', '1.4s ease-out')
+  // $('#work').css('transition', '1.4s ease-out')
   $('sectionTitle').css('transition', '1s ease-out')
   $('#work h2 ul li a').css('opacity', '0.1');
   $('#work .sectionTitle').css('opacity', '0.2')
@@ -207,8 +212,7 @@ function selectMenu(event) {
 
 
   if (targetClass == "one") {
-    $('#work').css('background-color', 'coral');
-    // $('.photo.project01.one').css('opacity', '1').css('transform', 'translateX(-10%)');
+    $('#work').css('background-color', 'pink');
     $('.photo.project01').css('opacity', '1');
     $('#work ul li .sub.list01').css('display', 'block');
   } else if (targetClass == "two") {
@@ -235,10 +239,10 @@ function leaveMenu() {
   var targetClass = event.currentTarget.className;
   $('#work_img').css('display', 'none');
   $('#work').css('background-color', 'var(--back-sub-color)');
-  $('#work .sectionTitle').css('opacity', '0.4');
-  $('#work h2 ul li a').css('color', '#333').css('opacity', '1');
-  $('#work h2 ul li a .letter').css('transition', '0s')
-  $('#work h2 ul li .text-y').css('transition', '0s')
+  $('#work .sectionTitle').css('opacity', '1');
+  $('#work h2 ul li a').css('color', 'var(--dark-gray)').css('opacity', '1');
+  $('#work h2 ul li a .letter').css('transition', 'translateY 0s ease 0s')
+  $('#work h2 ul li .text-y').css('transition', 'translateY 0s ease 0s')
   $('.photo').css('opacity', '0');
   $('#work ul li .sub').css('display', 'none');
 }
@@ -250,6 +254,7 @@ function textSplit(e) {
 };
 textSplit('#work h2 ul li a');
 textSplit('.yeslee.home');
+textSplit('.big-title .text-y');
 textSplit('.grid_right ul li a');
 
 function textAnimationUp(e, n) {
@@ -288,7 +293,7 @@ $('.goWork').on('click', function () {
 //-------------------project-animate-------------------//
 function ProjectAnimation(e) {
   $(e).addClass('animate')
-  $(e).css('opacity', '0.9').css('transform', 'translateY(0%)');;
+  $(e).css('opacity', '1').css('transform', 'translateY(0%)');;
 }
 
 
