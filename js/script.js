@@ -1,5 +1,3 @@
-// window.onload = function () {
-
 $(document).ready(function () {
   setTimeout(function () { overflowText('#home .text-y', 120); }, 0);
   setTimeout(function () { overflowText('.yeslee.home .letter', 100); }, 0);
@@ -9,13 +7,13 @@ $(document).ready(function () {
 
   //project
   if ($('body').is('.project')) {
-
     ProjectAnimation('.back');
     ProjectAnimation('.sub');
 
-    setTimeout(function () { $('#p-image-main').addClass('active'); }, 1400);
+    setTimeout(function () { $('#p-image-main-box').addClass('active'); }, 1400);
     setTimeout(function () { overflowText('.text-y', 200); }, 1000);
-
+  }
+  if ($('body').is('.project')) {
     //가로스크롤 - 마우스 누르고  
     $('.scroll-item').mousedown(function (event) {
       $(this)
@@ -23,7 +21,6 @@ $(document).ready(function () {
         .data('x', event.clientX)
         .data('scrollLeft', this.scrollLeft)
         .addClass("dragging");
-
       return false;
     }).mouseup(function (event) {
       $(this)
@@ -50,6 +47,7 @@ $(document).ready(function () {
     });
   }
 });
+
 
 
 // Overflow - text  
@@ -166,21 +164,30 @@ function scrollHandler() {
       setTimeout(function () { overflowText('.mobileText.six', 120); });
     }
   }
-  if ($('body').is('.project')) {
+  if ($('body').is('.project.sTV')) {
     if ($(window).scrollTop() >= $('.sTV_slide').position().top - 400) {
       $('.slideImage.one').css('transform', 'translateX(-40%)').css('transition-delay', '0s');
       $('.slideImage.two').css('transform', 'translateX(-20%)').css('transition-delay', '0.2s');
       $('.slideImage.three').css('transform', 'translateX(0%)').css('transition-delay', '0.4s');
-
+    }
+    if ($(window).scrollTop() >= $('.grid-container').position().top - 800) {
+      $('.scroll-item .items').css('left', '60px');
+    }
+  }
+  if ($('body').is('.project.sHealth')) {
+    if ($(window).scrollTop() >= $('.shealth_box_container').position().top - 400) {
+      setTimeout(function () { textAnimationUp('.shealth_box_img', 0, 260); });
+    }
+    if ($(window).scrollTop() >= 5) {
+      setTimeout(function () { $('#p-image-main').addClass('active'); });
+      // $('#p-image-main').css('transform', 'translateY(0%)')
     }
     if ($(window).scrollTop() >= $('.grid-container').position().top - 800) {
       $('.scroll-item .items').css('left', '60px');
     }
   }
 }
-
 $(window).on('scroll', scrollHandler);
-
 
 
 // Work - mouseover
@@ -198,7 +205,7 @@ function selectMenu(event) {
   $('#work .sectionTitle').css('opacity', '0.2')
   $('.' + targetClass).css('opacity', '1');
 
-  setTimeout(function () { textAnimationUp('.' + targetClass + ' .letter', -2); });
+  setTimeout(function () { textAnimationUp('.' + targetClass + ' .letter', -2, 40); });
   setTimeout(function () { textAnimationDown('.' + targetClass + ' .letter'); }, 200);
 
 
@@ -248,14 +255,14 @@ textSplit('.yeslee.home');
 textSplit('.big-title .text-y');
 textSplit('.grid_right ul li a');
 
-function textAnimationUp(e, n) {
+function textAnimationUp(e, n, f) {
   $.each($(e), function (i, el) {
     setTimeout(function () {
       $(el).css({
         'transform': 'translateY(' + n + '%)',
         'transition': '0.8s cubic-bezier(0.2, 1, 0.4, 1)',
       }, 450);
-    }, 10 + (i * 40));
+    }, 10 + (i * f));
   });
 }
 function textAnimationDown(e, n) {
@@ -272,7 +279,6 @@ function textAnimationDown(e, n) {
 
 
 //-------------------About-animate-------------------//
-
 //Work
 $('.goWork').on('click', function () {
   var experienceTop = $("#index-content-list").position().top - 100;
@@ -287,6 +293,36 @@ function ProjectAnimation(e) {
   $(e).css('opacity', '1').css('transform', 'translateY(0%)');;
 }
 
+$(window).scroll(startCounter);
+function startCounter() {
+  if ($(window).scrollTop() > $('.project.sHealth .shealth_box_container').position().top + 700) {
+    $(window).off("scroll", startCounter);
+    $('.count').each(function () {
+      var $this = $(this);
+      jQuery({ Counter: 100 }).animate({ Counter: $this.text() }, {
+        duration: 1000,
+        easing: 'swing',
+        step: function () {
+          $this.text(Math.ceil(this.Counter));
+        }
+      });
+    });
+  }
+}
+
+// password //
+function myFunction() {
+  if (document.getElementById("myPsw").value == "hello") {
+    alert('hello')
+    $('.notShow').css('display', 'none');
+    $('.Show').css('display', 'block');
+  } else {
+    alert("if you want to know password, please contact this email hi.yeslee@gmail.com")
+  }
+  $(this).submit(function (e) {
+    e.preventDefault();
+  });
+};
 
 
 
